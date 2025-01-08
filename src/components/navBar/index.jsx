@@ -22,7 +22,7 @@ function NavBar({
     .join(" ");
 
   useEffect(() => {
-    navBG.current.style.backgroundImage = `url('https://image.tmdb.org/t/p/${backdrop.backdrop_path}')`;
+    navBG.current.style.backgroundImage = `url('https://image.tmdb.org/t/p/original/${backdrop.backdrop_path}')`;
   }, [backdrop]);
   return (
     <section
@@ -46,7 +46,7 @@ function NavBar({
             </div>
           </div>
           <div className="cursor-pointer block lg:hidden">
-            <img src="public\logo.svg" alt="Watch Logo" />
+            <img src="\src\assets\logo.svg" alt="Watch Logo" />
           </div>
           <FontAwesomeIcon
             icon={faBars}
@@ -55,14 +55,14 @@ function NavBar({
           />
 
           <div className="flex gap-x-[27px] hidden  lg:flex">
-            <img src="public\search.svg" alt="" />
+            <img src="\src\assets\search.svg" alt="" />
 
-            <img src="public\bell.svg" alt="" />
+            <img src="src\assets\bell.svg" alt="" />
 
             <div className="flex gap-x-[9px] items-center font-400">
               <div className="w-[32px] h-[32px] ">
                 <img
-                  src="public\freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
+                  src="\src\assets\freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
                   alt=""
                   className="rounded-full"
                 />

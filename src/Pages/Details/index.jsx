@@ -29,7 +29,7 @@ function More() {
     <Fragment>
       <SideBar openSideBar={openSideBar} setOpenSideBar={setOpenSideBar} />
       <div className="bg-[#21201E] overflow-hidden max-w-[1300px] px-[16px]  md:px-[32px] py-[32px] ml-0 lg:ml-[280px] ">
-      <TrendingNav user={currentUser} setOpenSideBar={setOpenSideBar} />
+        <TrendingNav user={currentUser} setOpenSideBar={setOpenSideBar} />
       </div>
 
       <Details selectedMovie={selectedMovie} genre={genre} />
@@ -48,7 +48,7 @@ function More() {
                 .join(" ");
 
               //   const img = `https://image.tmdb.org/t/p/original/${trend.poster_path}`;
-              const img = `https://image.tmdb.org/t/p//${trend.poster_path}`;
+              const img = `https://image.tmdb.org/t/p/original/${trend.poster_path}`;
               const movieDate = new Date(trend.release_date).getFullYear();
 
               return (
@@ -60,7 +60,7 @@ function More() {
                     navigate(`/Home/${pathQuery}/${trend.id}`);
                   }}
                 >
-                  <div  className="w-[205px] sm:w-[255px] h-[301px]">
+                  <div className="w-[205px] sm:w-[255px] h-[301px]">
                     <img
                       src={img}
                       alt={trend.title}

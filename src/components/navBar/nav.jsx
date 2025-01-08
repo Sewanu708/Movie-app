@@ -31,7 +31,7 @@ function TrendingNav({ user, setOpenSideBar }) {
         </div>
         <div className="cursor-pointer block lg:hidden">
           <img
-            src="src\assets\logo.svg"
+            src="\src\assets\logo.svg"
             alt="Watch Logo"
             className="w-[80px] sm:w-[100px] sm:h-auto md:w-auto "
           />
@@ -43,14 +43,14 @@ function TrendingNav({ user, setOpenSideBar }) {
         />
 
         <div className="flex gap-x-[27px] hidden  lg:flex">
-          <img src="src\assets\search.svg" alt="" />
+          <img src="\src\assets\search.svg" alt="" />
 
-          <img src="src\assets\bell.svg" alt="" />
+          <img src="\src\assets\bell.svg" alt="" />
 
           <div className="flex gap-x-[9px] items-center font-400">
             <div className="w-[32px] h-[32px] ">
               <img
-                src="src\assets\freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
+                src="\src\assets\freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
                 alt=""
                 className="rounded-full"
               />

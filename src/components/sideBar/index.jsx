@@ -36,7 +36,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
         ref={sideBarRef}
       >
         <div className="cursor-pointer mb-[40px]">
-          <img src="src\assets\logo.svg" alt="Watch Logo" />
+          <img src="\src\assets\logo.svg" alt="Watch Logo" />
         </div>
 
         <div className="flex items-start flex-col gap-y-[24px] mb-[50px]">
@@ -46,7 +46,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
               navigate("/Home");
             }}
           >
-            <img src="src\assets\film.svg" alt="Home" className="w-[16px] " />
+            <img src="\src\assets\film.svg" alt="Home" className="w-[16px] " />
             <div>Home</div>
           </div>
 
@@ -56,7 +56,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
               navigate("/Favourites");
             }}
           >
-            <img src="src\assets\heart.svg" alt="" className="w-[16px] " />
+            <img src="\src\assets\heart.svg" alt="" className="w-[16px] " />
             <div>Favourites</div>
           </div>
 
@@ -67,7 +67,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
             }}
           >
             <img
-              src="src\assets\trending-up.svg"
+              src="\src\assets\trending-up.svg"
               alt=""
               className="w-[16px] "
             />
@@ -80,20 +80,20 @@ function SideBar({ openSideBar, setOpenSideBar }) {
               navigate("/Soon");
             }}
           >
-            <img src="src\assets\calendar.svg" alt="" className="w-[16px] " />
+            <img src="\src\assets\calendar.svg" alt="" className="w-[16px] " />
             <div>Coming soon</div>
           </div>
         </div>
 
         <div className="flex items-start flex-col gap-y-[24px] mb-[50px]">
           <div className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]">
-            <img src="src\assets\users.svg" alt="" className="w-[16px] " />
+            <img src="\src\assets\users.svg" alt="" className="w-[16px] " />
             <div>Community</div>
           </div>
 
           <div className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]">
             <img
-              src="src\assets\message-circle.svg"
+              src="\src\assets\message-circle.svg"
               alt=""
               className="w-[16px] "
             />
@@ -103,7 +103,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
 
         <div className="flex items-start flex-col gap-y-[24px] mb-[50px]">
           <div className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]">
-            <img src="src\assets\sliders.svg" alt="" className="w-[16px] " />
+            <img src="\src\assets\sliders.svg" alt="" className="w-[16px] " />
             <div>Settings</div>
           </div>
 
@@ -111,7 +111,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
             className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]"
             onClick={logout}
           >
-            <img src="src\assets\log-out.svg" alt="" className="w-[16px] " />
+            <img src="\src\assets\log-out.svg" alt="" className="w-[16px] " />
             <div>Logout</div>
           </div>
         </div>

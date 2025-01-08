@@ -29,7 +29,7 @@ function Trending({ text }) {
 
           
 
-          const img = `https://image.tmdb.org/t/p//${trend.poster_path}`;
+          const img = `https://image.tmdb.org/t/p/original/${trend.poster_path}`;
           const movieDate = new Date(trend.release_date).getFullYear();
 
 

@@ -21,11 +21,8 @@ function Login() {
     try {
       setError("");
 
-      console.log(data.mail, data.password);
-
       login(auth, data.mail, data.password)
         .then((result) => {
-          console.log(result);
           if (result) navigate("/Home");
         })
         .catch((error) => console.log(error));
@@ -38,7 +35,7 @@ function Login() {
   }
 
   return (
-    <section className="w-full h-screen bg-[url('/public\pexels-anniroenkae-3109850.jpg')] bg-cover bg-no-repeat ">
+    <section className="w-full h-screen bg-[url('/src\assets\pexels-anniroenkae-3109850.jpg')] bg-cover bg-no-repeat ">
       <div className="w-[min(100%,600px)] h-screen bg-gradient-to-b from-[#191817] from-49%  to-[#6100C2] rounded-r-lg flex flex-col items-center justify-center">
         <h1 className="text-white font-bold text-[50px] mb-4">Log in</h1>
         {error && (
@@ -56,7 +53,7 @@ function Login() {
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
               <img
-                src="public\mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src="/src\assets\mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
                 alt=""
                 className="inline w-[32px] h-[32px]"
               />
@@ -81,7 +78,7 @@ function Login() {
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
               <img
-                src="public\lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src="/src\assets\lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
                 alt=""
                 className=" w-[32px] h-[32px]"
               />
