@@ -5,7 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import search from '/src/assets/search.svg'
 import bell from '/src/assets/bell.svg'
 import userImage from"/src/assets/freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
-               
+import logo from '/src/assets/logo.svg'
 function TrendingNav({ user, setOpenSideBar }) {
   const navigate = useNavigate();
   return (
@@ -35,7 +35,7 @@ function TrendingNav({ user, setOpenSideBar }) {
         </div>
         <div className="cursor-pointer block lg:hidden">
           <img
-            src="\src\assets\logo.svg"
+            src={logo}
             alt="Watch Logo"
             className="w-[80px] sm:w-[100px] sm:h-auto md:w-auto "
           />

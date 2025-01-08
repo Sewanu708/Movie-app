@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import search from '/src/assets/search.svg'
 import bell from '/src/assets/bell.svg'
+import logo from '/src/assets/logo.svg'
 import userImage from"/src/assets/freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
 function NavBar({
   backdrop,
@@ -49,7 +50,7 @@ function NavBar({
             </div>
           </div>
           <div className="cursor-pointer block lg:hidden">
-            <img src="\src\assets\logo.svg" alt="Watch Logo" />
+            <img src={logo} alt="Watch Logo" />
           </div>
           <FontAwesomeIcon
             icon={faBars}
