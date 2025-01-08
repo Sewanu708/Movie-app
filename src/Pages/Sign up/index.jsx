@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../context";
 import auth from "../../firebaseConfig";
 import { updateProfile } from "firebase/auth";
-import userImage from "/src/assets/person_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
-import passwordImage from "/src/assets/lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
-import mailImage from "/src/assets/mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+import userImage from "/src/assets/person_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg";
+import passwordImage from "/src/assets/lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg";
+import mailImage from "/src/assets/mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg";
+import bg from '/src/assets/pexels-anniroenkae-3109850.jpg'
 function Register() {
   const navigate = useNavigate();
   const {
@@ -66,9 +67,9 @@ function Register() {
   }, [errors, passwordValue, nameValue, emailValue, cpasswordValue]);
 
   return (
-    <section className="w-full h-screen bg-[url('/src/assets/pexels-anniroenkae-3109850.jpg')] bg-cover bg-no-repeat ">
+    <section className="w-full h-screen bg-cover bg-no-repeat " style={{backgroundImage:`url(${bg})`}}>
       <div className="w-[min(100%,600px)] h-screen bg-gradient-to-b from-[#191817] from-49%  to-[#6100C2] rounded-r-lg flex flex-col items-center justify-center">
-        <h1 className="text-white font-bold text-[50px] mb-4">Sign Up</h1>
+        <h1 className="text-white font-bold xs:text-[50px] mb-4 text-[32px]">Sign Up</h1>
         {error && (
           <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
             {error}
@@ -76,7 +77,7 @@ function Register() {
         )}
         <form
           onSubmit={handleSubmit(submit)}
-          className="w-[350px] p-4 bg-white rounded-lg  flex flex-col gap-4"
+          className="w-[80%] xs:w-[350px] p-4 bg-white rounded-lg  flex flex-col gap-4"
         >
           <div
             className="flex border border-[#9b9b9b] rounded-lg"
@@ -101,6 +102,7 @@ function Register() {
                 {...register("name", {
                   required: "This field is required",
                 })}
+                className="w-[100%]"
               />
             </div>
           </div>
@@ -134,6 +136,7 @@ function Register() {
                     message: "Enter a correct e-mail address",
                   },
                 })}
+                className="w-[100%]"
               />
             </div>
           </div>
@@ -147,11 +150,7 @@ function Register() {
               htmlFor="password"
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
-              <img
-                src={passwordImage}
-                alt=""
-                className=" w-[32px] h-[32px]"
-              />
+              <img src={passwordImage} alt="" className=" w-[32px] h-[32px]" />
             </label>
             <div className="flex p-1 input">
               <input
@@ -170,12 +169,16 @@ function Register() {
                       return "Password contain at least a digit";
                   },
                 })}
+                className="w-[100%]"
               />
             </div>
           </div>
           {errors.password && <p>{errors.password.message}</p>}
 
-          <div className="flex border border-[#9b9b9b] rounded-lg" ref={cpasswordRef}>
+          <div
+            className="flex border border-[#9b9b9b] rounded-lg"
+            ref={cpasswordRef}
+          >
             <label
               htmlFor="password"
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
@@ -199,19 +202,26 @@ function Register() {
                       return "Password does not match";
                   },
                 })}
-                className="focus:outline-none pl-1"
+                className="focus:outline-none pl-1 w-[100%]"
               />
             </div>
           </div>
           {errors.cpassword && <p>{errors.cpassword.message}</p>}
 
           <div className="w-full flex flex-col justify-center items-center">
-            <button className="p-2 bg-[#6100C2] focus:outline-[#6100C2]   w-[100px] rounded-lg text-white hover:bg-[#2a0253] transition duration-300" disabled={loading} style={{opacity:loading?'0.5':'1'}}>
+            <button
+              className="p-2 bg-[#6100C2] focus:outline-[#6100C2]   w-[100px] rounded-lg text-white hover:bg-[#2a0253] transition duration-300"
+              disabled={loading}
+              style={{ opacity: loading ? "0.5" : "1" }}
+            >
               Submit
             </button>
-            <p className="mt-2 text-sm">
+            <p className="mt-2 xs:text-sm text-[12px]">
               Have an Account?{" "}
-              <Link className="text-[#6100C2]" to={"/Login"}>
+              <Link
+                className="text-[#6100C2] xs:text-sm text-[12px]"
+                to={"/Login"}
+              >
                 Log in
               </Link>
             </p>

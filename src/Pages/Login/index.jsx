@@ -6,6 +6,7 @@ import { GlobalContext } from "../../context";
 import auth from "../../firebaseConfig";
 import passwordImage from "/src/assets/lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
 import mailImage from "/src/assets/mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+import bg from '/src/assets/pexels-anniroenkae-3109850.jpg'
 function Login() {
   const navigate = useNavigate();
   const { login } = useContext(GlobalContext);
@@ -37,9 +38,9 @@ function Login() {
   }
 
   return (
-    <section className="w-full h-screen bg-[url('/src\assets\pexels-anniroenkae-3109850.jpg')] bg-cover bg-no-repeat ">
+    <section className="w-full h-screen  bg-cover bg-no-repeat " style={{backgroundImage:`url(${bg})`}}>
       <div className="w-[min(100%,600px)] h-screen bg-gradient-to-b from-[#191817] from-49%  to-[#6100C2] rounded-r-lg flex flex-col items-center justify-center">
-        <h1 className="text-white font-bold text-[50px] mb-4">Log in</h1>
+        <h1 className="text-white font-bold xs:text-[50px] mb-4 text-[32px]">Log in</h1>
         {error && (
           <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
             {error}
@@ -47,7 +48,7 @@ function Login() {
         )}
         <form
           onSubmit={handleSubmit(submit)}
-          className="w-[350px] p-4 bg-white rounded-lg  flex flex-col gap-4"
+          className="w-[80%] xs:w-[350px] p-4 bg-white rounded-lg  flex flex-col gap-4"
         >
           <div className="flex border border-[#9b9b9b] rounded-lg">
             <label
@@ -57,7 +58,7 @@ function Login() {
               <img
                 src={mailImage}
                 alt=""
-                className="inline w-[32px] h-[32px]"
+                className="inline w-[22px] h-[22px] xs:w-[32px] xs:h-[32px]"
               />
             </label>
             <div className="flex p-1 input">
@@ -69,6 +70,7 @@ function Login() {
                 {...register("mail", {
                   required: "Enter your e-mail address",
                 })}
+                className="w-[100%]"
               />
             </div>
           </div>
@@ -82,7 +84,7 @@ function Login() {
               <img
                 src={passwordImage}
                 alt=""
-                className=" w-[32px] h-[32px]"
+                className="inline w-[22px] h-[22px] xs:w-[32px] xs:h-[32px]"
               />
             </label>
             <div className="flex p-1 input">
@@ -94,6 +96,7 @@ function Login() {
                 {...register("password", {
                   required: "Enter your password",
                 })}
+                className="w-[100%]"
               />
             </div>
           </div>
@@ -104,9 +107,9 @@ function Login() {
               Login
             </button>
 
-            <p className="mt-2 text-sm">
+            <p className="mt-2 xs:text-sm text-[12px]">
               Don't have an account?{" "}
-              <Link className="text-[#6100C2]" to={"/Signup"}>
+              <Link className="text-[#6100C2] xs:text-sm text-[12px]" to={"/Signup"}>
                 Create Account
               </Link>
             </p>
