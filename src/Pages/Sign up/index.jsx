@@ -4,6 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../context";
 import auth from "../../firebaseConfig";
 import { updateProfile } from "firebase/auth";
+import userImage from "/src/assets/person_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+import passwordImage from "/src/assets/lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+import mailImage from "/src/assets/mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
 function Register() {
   const navigate = useNavigate();
   const {
@@ -63,7 +66,7 @@ function Register() {
   }, [errors, passwordValue, nameValue, emailValue, cpasswordValue]);
 
   return (
-    <section className="w-full h-screen bg-[url('/src\assets\pexels-anniroenkae-3109850.jpg')] bg-cover bg-no-repeat ">
+    <section className="w-full h-screen bg-[url('/src/assets/pexels-anniroenkae-3109850.jpg')] bg-cover bg-no-repeat ">
       <div className="w-[min(100%,600px)] h-screen bg-gradient-to-b from-[#191817] from-49%  to-[#6100C2] rounded-r-lg flex flex-col items-center justify-center">
         <h1 className="text-white font-bold text-[50px] mb-4">Sign Up</h1>
         {error && (
@@ -85,7 +88,7 @@ function Register() {
             >
               <img
                 className="inline w-[32px] h-[32px] "
-                src="/src\assets\person_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src={userImage}
                 alt=""
               />
             </label>
@@ -113,7 +116,7 @@ function Register() {
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
               <img
-                src="/src\assets\mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src={mailImage}
                 alt=""
                 className="inline w-[32px] h-[32px]"
               />
@@ -145,7 +148,7 @@ function Register() {
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
               <img
-                src="/src\assets\lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src={passwordImage}
                 alt=""
                 className=" w-[32px] h-[32px]"
               />
@@ -178,7 +181,7 @@ function Register() {
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
               <img
-                src="/src\assets\lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src={passwordImage}
                 alt=""
                 className="inline w-[32px] h-[32px]"
               />

@@ -2,6 +2,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import search from '/src/assets/search.svg'
+import bell from '/src/assets/bell.svg'
+import userImage from"/src/assets/freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
 function NavBar({
   backdrop,
   genre,
@@ -55,14 +58,14 @@ function NavBar({
           />
 
           <div className="flex gap-x-[27px] hidden  lg:flex">
-            <img src="\src\assets\search.svg" alt="" />
+            <img src={search} alt="" />
 
-            <img src="src\assets\bell.svg" alt="" />
+            <img src={bell} alt="" />
 
             <div className="flex gap-x-[9px] items-center font-400">
               <div className="w-[32px] h-[32px] ">
                 <img
-                  src="\src\assets\freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
+                  src={userImage}
                   alt=""
                   className="rounded-full"
                 />

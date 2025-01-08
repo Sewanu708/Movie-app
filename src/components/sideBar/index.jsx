@@ -3,6 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import auth from "../../firebaseConfig";
 import useSize from "../../hook/useWindowResize";
+import favImage from '/src/assets/heart.svg'
+import film from '/src/assets/film.svg'
+import logo from '/src/assets/logo.svg'
+import trendImage from '/src/assets/trending-up.svg'
+import calendar from '/src/assets/calendar.svg'
+import users from '/src/assets/users.svg'
+import settings from '/src/assets/sliders.svg'
+import log_out from '/src/assets/log-out.svg'
+import social from '/src/assets/message-circle.svg'
 
 function SideBar({ openSideBar, setOpenSideBar }) {
   const sideBarRef = useRef(null);
@@ -36,7 +45,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
         ref={sideBarRef}
       >
         <div className="cursor-pointer mb-[40px]">
-          <img src="\src\assets\logo.svg" alt="Watch Logo" />
+          <img src={logo} alt="Watch Logo" />
         </div>
 
         <div className="flex items-start flex-col gap-y-[24px] mb-[50px]">
@@ -46,7 +55,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
               navigate("/Home");
             }}
           >
-            <img src="\src\assets\film.svg" alt="Home" className="w-[16px] " />
+            <img src={film} alt="Home" className="w-[16px] " />
             <div>Home</div>
           </div>
 
@@ -56,7 +65,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
               navigate("/Favourites");
             }}
           >
-            <img src="\src\assets\heart.svg" alt="" className="w-[16px] " />
+            <img src={favImage} alt="" className="w-[16px] " />
             <div>Favourites</div>
           </div>
 
@@ -67,7 +76,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
             }}
           >
             <img
-              src="\src\assets\trending-up.svg"
+              src={trendImage}
               alt=""
               className="w-[16px] "
             />
@@ -80,20 +89,20 @@ function SideBar({ openSideBar, setOpenSideBar }) {
               navigate("/Soon");
             }}
           >
-            <img src="\src\assets\calendar.svg" alt="" className="w-[16px] " />
+            <img src={calendar} alt="" className="w-[16px] " />
             <div>Coming soon</div>
           </div>
         </div>
 
         <div className="flex items-start flex-col gap-y-[24px] mb-[50px]">
           <div className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]">
-            <img src="\src\assets\users.svg" alt="" className="w-[16px] " />
+            <img src={users} alt="" className="w-[16px] " />
             <div>Community</div>
           </div>
 
           <div className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]">
             <img
-              src="\src\assets\message-circle.svg"
+              src={social}
               alt=""
               className="w-[16px] "
             />
@@ -103,7 +112,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
 
         <div className="flex items-start flex-col gap-y-[24px] mb-[50px]">
           <div className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]">
-            <img src="\src\assets\sliders.svg" alt="" className="w-[16px] " />
+            <img src={settings} alt="" className="w-[16px] " />
             <div>Settings</div>
           </div>
 
@@ -111,7 +120,7 @@ function SideBar({ openSideBar, setOpenSideBar }) {
             className="flex gap-x-[8px] items-center justify-center cursor-pointer text-white]"
             onClick={logout}
           >
-            <img src="\src\assets\log-out.svg" alt="" className="w-[16px] " />
+            <img src={log_out} alt="" className="w-[16px] " />
             <div>Logout</div>
           </div>
         </div>

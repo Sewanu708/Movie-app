@@ -6,8 +6,8 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut,
 } from "firebase/auth";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 export const GlobalContext = createContext(null);
 

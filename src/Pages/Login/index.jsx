@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../context";
 import auth from "../../firebaseConfig";
+import passwordImage from "/src/assets/lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+import mailImage from "/src/assets/mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
 function Login() {
   const navigate = useNavigate();
   const { login } = useContext(GlobalContext);
@@ -53,7 +55,7 @@ function Login() {
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
               <img
-                src="/src\assets\mail_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src={mailImage}
                 alt=""
                 className="inline w-[32px] h-[32px]"
               />
@@ -78,7 +80,7 @@ function Login() {
               className="rounded-l-lg bg-[#6100C2] p-2 flex items-center justify-center "
             >
               <img
-                src="/src\assets\lock_24dp_FFF_FILL0_wght400_GRAD0_opsz24.svg"
+                src={passwordImage}
                 alt=""
                 className=" w-[32px] h-[32px]"
               />
