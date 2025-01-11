@@ -40,6 +40,9 @@ function Login() {
         case "auth/user-not-found":
           setFirebaseError("No user found with this email.");
           break;
+        case "auth/invalid-email":
+          setFirebaseError("No user found with this email.");
+          break;
         case "auth/wrong-password":
           setFirebaseError("Incorrect password. Please try again.");
           break;
