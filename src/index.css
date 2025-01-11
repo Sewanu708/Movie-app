@@ -14,30 +14,40 @@
     
 }
 
-form div:has(.input input:focus){
-  border: 1.2px solid #6100C2;
+form div{
+  /* border: 1.5px solid #6100C2; */
+  color: black;
 }
-
+form div:has(.input input:focus) .pass{
+  border-bottom: 1.5px solid black;
+  border-top: 1.5px solid black;
+  border-right: 1.5px solid black;
+  /* color: #4141f4e6; */
+}
 form div:has(.input input:focus) label{
   background-color: black;
 }
+
 
 input:focus{
   outline: none;
 }
 
-form div.incorrect:has(.input input:focus){
-  border: 1.2px solid #DC2626;
+form div.incorrect:has(.input input:focus) .pass{
+  border: 1.5px solid #DC2626;
+
 }
+
 
 
 form div.incorrect:has(.input input:focus) label{
   background-color: #DC2626;
+  
 }
 
 
-form div.success:has(.input input:focus){
-  border: 1.2px solid #059669;
+form div.success:has(.input input:focus) .pass{
+  border: 1.5px solid #059669;
 }
 
 

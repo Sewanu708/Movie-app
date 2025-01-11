@@ -11,6 +11,7 @@ import Series from "./Pages/Series";
 import Favourites from "./Pages/Favourites";
 import AuthPage from "./Pages/private-route";
 
+
 function CustomRoute() {
   const element = useRoutes([
     {
@@ -20,34 +21,44 @@ function CustomRoute() {
     {
       path: "Signup",
       element: <Register />,
-    },{
+    },
+    {
       path: "Login",
       element: <Login />,
-    },{
-      element:<AuthPage/>,
-      children:[{
-        path: "Home",
-        element: <Home />,
-      },{
-        path: "Trending",
-        element: <TrendingPage />,
-      },{
-        path: "Home/Trending/:id",
-        element: <More />,
-      },{
-        path: "Home/Coming Soon/:id",
-        element: <More />,
-      },{
-        path: "Soon",
-        element: <Soon />,
-      },{
-        path: "Series",
-        element: <Series />,
-      },{
-        path: "Favourites",
-        element: <Favourites />,
-      }]
-    }
+    },
+    {
+      element: <AuthPage />,
+      children: [
+        {
+          path: "Home",
+          element: <Home />,
+        },
+        {
+          path: "Trending",
+          element: <TrendingPage />,
+        },
+        {
+          path: "Home/Trending/:id",
+          element: <More />,
+        },
+        {
+          path: "Home/Coming Soon/:id",
+          element: <More />,
+        },
+        {
+          path: "Soon",
+          element: <Soon />,
+        },
+        {
+          path: "Series",
+          element: <Series />,
+        },
+        {
+          path: "Favourites",
+          element: <Favourites />,
+        },
+      ],
+    },
   ]);
 
   return element;
