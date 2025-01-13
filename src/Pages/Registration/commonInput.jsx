@@ -17,7 +17,7 @@ function CommonInput({
 
   function handleName(e) {
     const value = e.target.value;
-    
+
     if (/\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(value)) {
       setError({
         ...error,
@@ -34,17 +34,20 @@ function CommonInput({
       labelRef.current.classList.add("incorrect");
     }
   }
-  function handleMail(e,page) {
+  function handleMail(e, page) {
     const value = e.target.value;
-    
-    if (page === "Login") setDetails({ ...details, mail: value });
-    return;
+
+    if (page === "Login") {
+      setDetails({ ...details, mail: value });
+      return;
+    }
     if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
       setError({
         ...error,
         [name]: "",
       });
       labelRef.current.classList.add("success");
+      setDetails({ ...details, mail: value });
     } else {
       setError({
         ...error,
@@ -54,10 +57,12 @@ function CommonInput({
       labelRef.current.classList.add("incorrect");
     }
   }
-  function handlePassword(e,page) {
+  function handlePassword(e, page) {
     const value = e.target.value;
-    if (page === "Login") setDetails({ ...details, password: value });
-    return;
+    if (page === "Login") {
+      setDetails({ ...details, password: value });
+      return;
+    }
     if (!/^(?=.*[a-z])/.test(value)) {
       labelRef.current.classList.remove("success");
       labelRef.current.classList.add("incorrect");
@@ -87,7 +92,6 @@ function CommonInput({
 
   function handleCPassword(e) {
     const value = e.target.value;
-    console.log(details);
 
     if (details.password === value) {
       setError({
@@ -137,9 +141,9 @@ function CommonInput({
             placeholder={placeholder}
             onInput={(e) => {
               if (name === "name") handleName(e);
-              if (name === "password") handlePassword(e,page);
+              if (name === "password") handlePassword(e, page);
               if (name === "cpassword") handleCPassword(e);
-              if (name === "mail") handleMail(e,page);
+              if (name === "mail") handleMail(e, page);
             }}
             className="w-[100%]"
           />

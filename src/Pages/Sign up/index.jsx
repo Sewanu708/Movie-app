@@ -35,6 +35,8 @@ function Register() {
       });
       if (auth.currentUser.displayName) navigate("/Home");
     } catch (error) {
+      console.log(data);
+      
       console.log(error);
 
       switch (error.code) {
