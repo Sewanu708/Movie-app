@@ -10,6 +10,7 @@ import Soon from "./Pages/Soon";
 import Series from "./Pages/Series";
 import Favourites from "./Pages/Favourites";
 import AuthPage from "./Pages/private-route";
+import SearchDetails from "./Pages/Search/SearchDetails";
 
 
 function CustomRoute() {
@@ -56,6 +57,10 @@ function CustomRoute() {
         {
           path: "Favourites",
           element: <Favourites />,
+        },
+        {
+          path: "search/:id",
+          element: <SearchDetails />,
         },
       ],
     },

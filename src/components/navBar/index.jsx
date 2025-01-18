@@ -2,10 +2,10 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import search from '/src/assets/search.svg'
-import bell from '/src/assets/bell.svg'
-import logo from '/src/assets/logo.svg'
-import userImage from"/src/assets/freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg"
+import search from "/src/assets/search.svg";
+import bell from "/src/assets/bell.svg";
+import logo from "/src/assets/logo.svg";
+import userImage from "/src/assets/freepik__candid-image-photography-natural-textures-highly-r__79590.jpeg";
 function NavBar({
   backdrop,
   genre,
@@ -13,6 +13,8 @@ function NavBar({
   setFavourites,
   user,
   setOpenSideBar,
+  setSearch,
+  searchRef2,
 }) {
   const navBG = useRef();
   const navigate = useNavigate();
@@ -36,7 +38,12 @@ function NavBar({
       <div className="h-[455px] bg-gradient-to-t from-[#191817] to-[rgba(255,255,255,0.1)] to-93% px-[32px] w-full  py-[40px] flex flex-col justify-between">
         <nav className="w-full flex items-center justify-between text-white">
           <div className="flex gap-x-[32px] hidden lg:flex  ">
-            <div id="movies"  className="font-[500] cursor-pointer transition ease-in duration-100">Movies</div>
+            <div
+              id="movies"
+              className="font-[500] cursor-pointer transition ease-in duration-100"
+            >
+              Movies
+            </div>
             <div
               className="font-[500] cursor-pointer transition ease-in duration-100"
               onClick={() => {
@@ -52,28 +59,30 @@ function NavBar({
           <div className="cursor-pointer block lg:hidden">
             <img src={logo} alt="Watch Logo" />
           </div>
-          <FontAwesomeIcon
-            icon={faBars}
-            className="block lg:hidden cursor-pointer"
-            onClick={()=>setOpenSideBar(prev=>!prev)}
-          />
 
-          <div className="flex gap-x-[27px] hidden  lg:flex">
-            <img src={search} alt="" />
+          <div className="flex gap-x-[27px] items-center justify-center">
+            <img
+              src={search}
+              alt=""
+              onClick={() => setSearch((prev) => !prev)}
+              className="cursor-pointer"
+              ref={searchRef2}
+            />
 
-            <img src={bell} alt="" />
+            <img src={bell} alt="" className="hidden  lg:flex" />
 
-            <div className="flex gap-x-[9px] items-center font-400">
+            <div className="flex gap-x-[9px] items-center font-400 hidden  lg:flex">
               <div className="w-[32px] h-[32px] ">
-                <img
-                  src={userImage}
-                  alt=""
-                  className="rounded-full"
-                />
+                <img src={userImage} alt="" className="rounded-full" />
               </div>
 
               <div>{user.displayName}</div>
             </div>
+            <FontAwesomeIcon
+              icon={faBars}
+              className="block lg:hidden cursor-pointer"
+              onClick={() => setOpenSideBar((prev) => !prev)}
+            />
           </div>
         </nav>
 
