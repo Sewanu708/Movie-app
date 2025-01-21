@@ -2,13 +2,12 @@ import { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 function Details({ selectedMovie, genre }) {
-  console.log(selectedMovie);
 
   const selectedMovieImg = `https://image.tmdb.org/t/p/original${selectedMovie.poster_path}`;
   const selectedMovieDate = new Date(
     selectedMovie.release_date || selectedMovie.first_air_date
   ).getFullYear();
-  console.log(genre);
+  
 
   const selectedMovieGenre = selectedMovie.genre_ids
     .reduce((a, c) => {

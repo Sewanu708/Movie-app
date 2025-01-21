@@ -7,9 +7,8 @@ import { GlobalContext } from "../../context";
 import HomeSkeleton from "../../components/skeleton/homeSkeleton";
 import Search from "../Search";
 function Home() {
-  const [search, setSearch] = useState(false);
   const searchRef = useRef(null);
-  const searchRef2 = useRef(null)
+  const searchRef2 = useRef(null);
   const {
     QueriesObject,
     setFavourites,
@@ -17,10 +16,13 @@ function Home() {
     currentUser,
     openSideBar,
     setOpenSideBar,
+    search,
+    setSearch,
+    trackSearch,
   } = useContext(GlobalContext);
   const trending = QueriesObject["Trending"][0];
   const genre = QueriesObject["Trending"][1];
-  
+
   if (trending.isLoading)
     return (
       <Fragment>
@@ -29,21 +31,11 @@ function Home() {
       </Fragment>
     );
 
-  const trackSearch = (ref, event) => {
-    // console.log('target equality',event.target===searchRef2.current);
-    // console.log('ref contains',ref.current.contains(event.target));
-    
-    if (search && (!(ref.current.contains(event.target))) && (!(event.target===searchRef2.current))) {
-      setSearch(false);
-      console.log('Hello');
-      
-    }
-  };
   useEffect(() => {
-    const handleClick = (e)=> trackSearch(searchRef, e)
+    const handleClick = (e) => trackSearch(searchRef, e, searchRef2);
     window.addEventListener("click", handleClick);
-    return ()=>   window.removeEventListener("click", handleClick);
-  }, [search,trackSearch]);
+    return () => window.removeEventListener("click", handleClick);
+  }, [search]);
 
   return (
     <Fragment>
@@ -70,7 +62,7 @@ function Home() {
         <Trending text={"Coming Soon"} />
       </div>
 
-      <Search search={search} searchRef={searchRef} />
+      <Search searchRef={searchRef} />
     </Fragment>
   );
 }

@@ -2,20 +2,20 @@ import { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 function SearchMoreDetails({ selectedMovie }) {
-  console.log(selectedMovie);
-
   const selectedMovieImg = `https://image.tmdb.org/t/p/original${selectedMovie.poster_path}`;
   const selectedMovieDate = new Date(
     selectedMovie.release_date || selectedMovie.first_air_date
   ).getFullYear();
-  const selectedMovieGenre = selectedMovie.genres.reduce((a, c) => {
-    a.push(Object.values(c)[1]);
-    return a
-  }, []).join(" ");
- 
+  const selectedMovieGenre = selectedMovie.genres
+    .reduce((a, c) => {
+      a.push(Object.values(c)[1]);
+      return a;
+    }, [])
+    .join(" ");
+
   return (
     <Fragment>
-      <div className=" ml-0 lg:ml-[280px] bg-[#21201E] grid grid-cols-1 md:grid-cols-[1fr,1fr] px-4 md:px-[32px] gap-x-[24px] gap-y-[16px] h-screen">
+      <div className=" ml-0 lg:ml-[280px] bg-[#21201E] pt-[40px] grid grid-cols-1 md:grid-cols-[1fr,1fr] px-4 md:px-[32px] gap-x-[24px] gap-y-[16px] h-screen">
         <div className="w-[100%] h-[420px] rounded-[20px] border border-[#ffffff99]">
           <img
             src={selectedMovieImg}

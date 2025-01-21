@@ -1,7 +1,6 @@
 import * as React from "react";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
-
 function SearchSkeleton() {
   return (
     <Stack className=" " spacing={1}>

@@ -1,8 +1,7 @@
-import { Fragment, useContext, useState } from "react";
-import { GlobalContext } from "../../context";
-import SearchResults from "../../components/Search/index";
-
-function Search({ searchRef }) {
+import { useContext, useState } from "react";
+import SearchFavResults from "./search";
+import { GlobalContext } from "../../../context";
+function SearchFav({ searchRef }) {
   const [searchText, setSearchText] = useState("");
   const { search } = useContext(GlobalContext);
 
@@ -31,9 +30,9 @@ function Search({ searchRef }) {
         </div>
 
         <div className="w-full h-full flex mt-[18px]  flex-col px-4 overflow-scroll">
-          <h2 className="pb-2">Results</h2>
+          <h2 className="pb-2">Results from Favourites</h2>
           <div className="flex flex-col gap-y-4 w-full">
-            {search ? <SearchResults keyword={searchText} /> : ""}
+            {search ? <SearchFavResults keyword={searchText} /> : ""}
           </div>
         </div>
       </div>
@@ -41,4 +40,4 @@ function Search({ searchRef }) {
   );
 }
 
-export default Search;
+export default SearchFav;

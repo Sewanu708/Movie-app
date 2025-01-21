@@ -8,13 +8,13 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-
 export const GlobalContext = createContext(null);
 
 function GlobalState({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   const [openSideBar, setOpenSideBar] = useState(false);
+  const [search, setSearch] = useState(false);
 
   function signup(auth, email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -87,6 +87,18 @@ function GlobalState({ children }) {
     Trending: [trending, movieGenre],
   };
 
+  const trackSearch = (ref, event, searchNavRef) => {
+    console.log(search);
+
+    if (
+      search &&
+      !ref.current.contains(event.target) &&
+      !(event.target === searchNavRef.current)
+    ) {
+      setSearch(false);
+    }
+
+  };
   return (
     <GlobalContext.Provider
       value={{
@@ -101,6 +113,9 @@ function GlobalState({ children }) {
         loading,
         openSideBar,
         setOpenSideBar,
+        trackSearch,
+        search,
+        setSearch,
       }}
     >
       {children}

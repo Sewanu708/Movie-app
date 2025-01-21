@@ -1,7 +1,8 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import SearchSkeleton from "./skeleton";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../context";
 const token = import.meta.env.VITE_AUTH_TOKEN;
 
 const options = {
@@ -12,6 +13,8 @@ const options = {
   },
 };
 function SearchResults({ keyword }) {
+  console.log(keyword);
+  
   const navigate = useNavigate();
   async function fetchFn(keyword) {
     const link = `https://api.themoviedb.org/3/search/keyword?query=${keyword}&page=1`;
@@ -61,4 +64,5 @@ function SearchResults({ keyword }) {
     </Fragment>
   );
 }
-export default SearchResults;
+
+export default SearchResults
