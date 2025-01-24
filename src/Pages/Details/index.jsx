@@ -24,9 +24,9 @@ function More() {
   } = useContext(GlobalContext);
   const data = QueriesObject[pathQuery][0].data.results;
   const genre = QueriesObject[pathQuery][1].data.genres;
-  const selectedMovie = data.find((movie) => movie.id == id);
+  const selectedMovie = data.find((movie) => movie.id == id)?data.find((movie) => movie.id == id):favourites.get(id)
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     localStorage.setItem("favourites", JSON.stringify([...favourites]));
   }, [favourites]);

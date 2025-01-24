@@ -6,7 +6,7 @@ export default function HomeSkeleton() {
   return (
     <Stack className="bg-[#21201E]" spacing={1}>
       <div>
-        <Skeleton variant="rectangular" height={100} />
+        <Skeleton variant="rectangular" height={400} />
         <div>
           <Skeleton
             variant="text"
@@ -15,7 +15,7 @@ export default function HomeSkeleton() {
             className="text-white text-[20px] pb-4  font-[500]"
           />
 
-          <div className="flex items-start justify-start gap-x-[20px] overflow-x-scroll overflow-y-hidden ">
+          <div className="flex items-start justify-start gap-x-[20px] ">
             <Skeleton variant="rounded" width={255} height={301} />
 
             <Skeleton variant="rounded" width={255} height={301} />

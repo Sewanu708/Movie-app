@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 export default function FavMore(
   fav,
   index,
@@ -7,16 +9,14 @@ export default function FavMore(
   favourites
 ) {
   const favData = fav[1];
+  const navigate = useNavigate();
   const img = `https://image.tmdb.org/t/p/original/${favData.poster_path}`;
   const movieDate = new Date(
     favData.release_date || favData.first_air_date
   ).getFullYear();
-  const favGenres = mGenre.findIndex(
-    (genre) => genre.id == favData.genre_ids[0]
-  );
 
   let genres;
-  if (favGenres > -1) {
+  if (favData.media_type === "movie") {
     genres = favData.genre_ids
       .reduce((a, c) => {
         a.push(mGenre.find((g) => g.id === c).name);
@@ -24,10 +24,11 @@ export default function FavMore(
         return a;
       }, [])
       .join(" ");
+    console.log(genres);
   } else {
     genres = favData.genre_ids
       .reduce((a, c) => {
-        a.push(sGenre.find((g) => g.id === c));
+        a.push(sGenre.find((g) => g.id === c).name);
 
         return a;
       }, [])
@@ -39,9 +40,9 @@ export default function FavMore(
       key={index}
       className="w-[100%] h-[201px] lg:w-[100%] lg:h-[301px] flex flex-col items-start justify-start relative rounded-sm"
       data-id={favData.id}
-      // onClick={() => {
-      //   setSelectedMovie(trend);
-      // }}
+      onClick={() => {
+        navigate(`/Favourites/${favData.id}`);
+      }}
     >
       <div className="w-[100%] h-[201px] lg:w-[100%] lg:h-[301px]">
         <img
@@ -52,7 +53,7 @@ export default function FavMore(
       </div>
       <div className="absolute bottom-0 bg-[#ffffff99] w-[100%]  lg:w-[100%]   rounded-b-lg px-[20px] py-[16px]">
         <div className="text-[12px] md:text-[14px] lg:text-[16px]">
-          {favData.title}
+          {favData.title || favData.name}
         </div>
         <div>
           <span className="h-[50px] truncate text-[12px] md:text-[14px] lg:text-[16px]">

@@ -17,7 +17,7 @@ function TrendingNav({
   const navigate = useNavigate();
   return (
     <Fragment>
-      <nav className="w-[90%] lg:w-[70%] h-[100px] bg-[#21201E] flex top-[0] items-center fixed z-[100] justify-between text-white">
+      <nav className="w-[95%] lg:w-[85%] h-[100px] bg-[#21201E] flex top-[0] items-center fixed z-[100] justify-between text-white pr-16 lg:pr-64">
         <div className="flex gap-x-[32px] hidden lg:flex  ">
           <div
             id="movies"

@@ -70,8 +70,10 @@ function Favourites() {
                 </h1>
               </Fragment>
             ) : (
-              [...favourites.entries()].map((fav, index) =>
-                FavMore(fav, index, mGenre, sGenre, setFavourites, favourites)
+              [...favourites.entries()].map((fav, index) =>{
+                // console.log(fav);
+                
+                return FavMore(fav, index, mGenre, sGenre, setFavourites, favourites)}
               )
             )}
           </div>

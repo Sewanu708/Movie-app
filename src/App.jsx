@@ -11,7 +11,7 @@ import Series from "./Pages/Series";
 import Favourites from "./Pages/Favourites";
 import AuthPage from "./Pages/private-route";
 import SearchDetails from "./Pages/Search/SearchDetails";
-
+import FavDetails from "./Pages/Favourites/details";
 
 function CustomRoute() {
   const element = useRoutes([
@@ -56,7 +56,11 @@ function CustomRoute() {
         },
         {
           path: "Favourites",
-          element: <Favourites />,
+          element: <Favourites />
+        },
+        {
+          path: "Favourites/:id",
+          element: <FavDetails />,
         },
         {
           path: "search/:id",
